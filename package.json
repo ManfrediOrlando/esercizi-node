@@ -1,0 +1,22 @@
+{
+  "name": "esercizi-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Es1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManfrediOrlando/esercizi-node.git"
+  },
+  "author": "Manfredi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManfrediOrlando/esercizi-node/issues"
+  },
+  "homepage": "https://github.com/ManfrediOrlando/esercizi-node#readme",
+  "dependencies": {
+    "figlet": "^1.5.2"
+  }
+}
