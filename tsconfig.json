@@ -1,0 +1,9 @@
+{
+    "extends": "@tsconfig/node16/tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true
+    },
+    "include": ["./pt2/**/*.ts", "pt2/es4.mjs"],
+    "exclude": ["./pt2/**/*.test.ts"]
+}
