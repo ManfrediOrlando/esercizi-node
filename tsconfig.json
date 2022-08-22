@@ -1,9 +1,11 @@
 {
     "extends": "@tsconfig/node16/tsconfig.json",
     "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
         "outDir": "./dist",
         "sourceMap": true
     },
-    "include": ["./pt2/**/*.ts", "pt2/es4.mjs"],
+    "include": ["./pt2/**/*.ts", "./pt2/**/*.mjs"],
     "exclude": ["./pt2/**/*.test.ts"]
 }
