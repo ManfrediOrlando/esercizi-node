@@ -1,13 +1,8 @@
-import express from "express";
-import "express-async-errors";
+import "dotenv/config";
 
-const app = express();
+import app from "./app";
 
-app.get("/", (request, response) => {
-    response.send("This is the space facts API!");
-});
-
-const port = 3000;
+const port = process.env.PORT;
 
 app.listen(port, () => {
     console.log(`[server]: server is running at http://localhost:${port}`);
