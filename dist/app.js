@@ -9,7 +9,8 @@ const app = (0, express_1.default)();
 app.get("/planets", (request, response) => {
     response.json([
         { name: "Mercury" },
-        { name: "Venus" }
+        { name: "Venus" },
+        { name: "Jupiter" },
     ]);
 });
 exports.default = app;
