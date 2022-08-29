@@ -6,18 +6,42 @@ import app from "./app";
 
 const request = supertest(app);
 
-test("GET /planets", async () => {
-    const planet = {
-        name: "Mercury",
-        diameter: 1234,
-        moons: 0,
-    };
+describe("POST /planets", async () => {
+    test("valid request", async () => {
+        const planet = {
+            name: "Mercury",
+            diameter: 1234,
+            moons: 0,
+        };
 
-    const response = await request
-        .post("/planets")
-        .send(planet)
-        .expect(201)
-        .expect("content-type", /application\/json/);
+        // @ts-ignore
+        prismaMock.planet.findMany.mockResolvedValue(planets);
 
-    expect(response.body).toEqual(planet);
+        const response = await request
+            .post("/planets")
+            .send(planet)
+            .expect(201)
+            .expect("content-type", /application\/json/);
+
+        expect(response.body).toEqual(planet);
+    });
+
+    test("invalid request", async () => {
+        const planet = {
+            diameter: 1234,
+            moons: 0,
+        };
+
+        const response = await request
+            .post("/planets")
+            .send(planet)
+            .expect(422)
+            .expect("content-type", /application\/json/);
+
+        expect(response.body).toEqual({
+            errors: {
+                body: expect.any(Array),
+            },
+        });
+    });
 });
