@@ -15,7 +15,7 @@ describe("POST /planets", async () => {
         };
 
         // @ts-ignore
-        prismaMock.planet.findMany.mockResolvedValue(planets);
+        prismaMock.planet.create.mockResolvedValue(planet);
 
         const response = await request
             .post("/planets")
